@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'instagram_api/version'
+require 'instagram_api'
 
 Gem::Specification.new do |spec|
   spec.name          = "instagram_api"
   spec.version       = Instagram::VERSION
   spec.authors       = ["Casey Scarborough"]
   spec.email         = ["caseyscarborough@gmail.com"]
-  spec.description   = ""
-  spec.summary       = ""
-  spec.homepage      = ""
+  spec.description   = "A wrapper for the Instagram API."
+  spec.summary       = "This gem is a simple and easy-to-use wrapper for accessing data from Instagram's API."
+  spec.homepage      = "https://github.com/caseyscarborough/instagram"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
