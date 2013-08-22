@@ -1,10 +1,13 @@
 require 'json'
+require 'instagram_api/client/users'
 
 module Instagram
   class Client
 
     include HTTParty
     base_uri Default::API_ENDPOINT
+
+    include Instagram::Client::Users
 
     attr_accessor :client_id, :client_secret, :callback_url, :access_token
 
@@ -40,6 +43,10 @@ module Instagram
     end
 
     private
+      def get(url, params={})
+        response = self.class.get url, query: params
+        response.parsed_response
+      end
 
       def post(url, params={}, body={}, headers={})
         response = self.class.post url, params: params, body: body

@@ -22,6 +22,9 @@ VCR.configure do |c|
   c.filter_sensitive_data("<test_callback_url>") do
     CONFIG['test_callback_url']
   end
+  c.filter_sensitive_data("<test_access_token>") do
+    CONFIG['test_access_token']
+  end
   c.cassette_library_dir = 'spec/cassettes'
   c.default_cassette_options = {
     :serialize_with             => :json,
@@ -44,10 +47,18 @@ def test_callback_url
   CONFIG['test_callback_url']
 end
 
+def test_access_token
+  CONFIG['test_access_token']
+end
+
 def test_client
   Instagram::Client.new(
     client_id: test_client_id,
     client_secret: test_client_secret,
     callback_url: test_callback_url
   )
+end
+
+def test_auth_client
+  Instagram.client(access_token: test_access_token)
 end
