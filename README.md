@@ -51,6 +51,36 @@ Alternatively, after you or your user have authenticated, you can reinstantiate 
 client = Instagram.client(:access_token => '1313345.3flmg64.r0fjggj4oi02prm3fljg5000')
 ```
 
+### Users API Methods
+
+You can access various information about Instagram users by issuing the following commands:
+
+```ruby
+# Get a user information by id or username.
+client.user(16500486)
+client.user('caseyscarborough')
+
+# Get the authenticated user's information.
+client.user
+
+# Search for a user by username.
+client.search('github')
+
+# Retrieve an authenticated user's feed.
+client.feed
+
+# Get a user's recent updates.
+client.recent(16500486)
+
+# Retrieve an authenticated user's updates.
+client.recent
+
+# Get an authenticated user's liked photos/videos.
+client.liked
+```
+
+See the [Instagram User Endpoints](http://instagram.com/developer/endpoints/users/) for more information.
+
 ## Contributing
 
 1. Fork it
