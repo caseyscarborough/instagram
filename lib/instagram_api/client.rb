@@ -31,8 +31,9 @@ module Instagram
           redirect_uri: @callback_url,
           code: code
         } 
-        response = post Default::ACCESS_TOKEN_URL, {}, params, { 'Content-type' => 'application/x-www-form-urlencoded' }
+        response = post "https://api.instagram.com/oauth/access_token", {}, params, { 'Content-type' => 'application/x-www-form-urlencoded' }
         @access_token = response['access_token']
+        @access_token
       else
         @access_token
       end
