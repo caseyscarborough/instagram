@@ -31,8 +31,8 @@ describe Instagram::Client::Users do
   describe '.search', :vcr do
     it 'returns search results' do
       results = test_auth_client.search('caseyscarborough')
-      results.should be_instance_of Array
-      results[0].id.should == "16500486"
+      results.data.should be_instance_of Array
+      results.data[0].id.should == "16500486"
     end
   end
 

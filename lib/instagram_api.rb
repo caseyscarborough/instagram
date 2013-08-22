@@ -1,11 +1,11 @@
+require 'json'
 require 'httparty'
 require 'instagram_api/default'
 require 'instagram_api/client'
+require 'instagram_api/version'
 
 module Instagram
   
-  VERSION = "0.0.2"
-
   class << self
   
     def client(options={})

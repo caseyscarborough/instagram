@@ -9,16 +9,14 @@ module Instagram
           get "/users/#{user}", auth_params
         when String
           results = search(user)
-          get "/users/#{results[0].id}", auth_params
+          get "/users/#{results.data[0].id}", auth_params
         when nil
           get '/users/self', auth_params
         end
       end
 
       def search(query=nil)
-        options = { q: query }
-        response = get "/users/search", options.merge(auth_params)
-        response.data
+        get "/users/search", auth_params.merge(q: query)
       end
 
       def feed
@@ -26,11 +24,8 @@ module Instagram
       end
 
       def recent(id=nil)
-        if id
-          get "/users/#{id}/media/recent", auth_params
-        else
-          get "/users/self/media/recent", auth_params
-        end
+        url = id ? "/users/#{id}/media/recent" : "/users/self/media/recent"
+        get url, auth_params
       end
 
       def liked
