@@ -45,6 +45,12 @@ client.get_access_token('88fb89ab65454da2a06f2c6dacd09436')
 
 The last method, `get_access_token`, will return your access token as well as set it for your client. You can then access any method in the API using your client.
 
+Alternatively, after you or your user have authenticated, you can reinstantiate your client using the previously returned access token.
+
+```ruby
+client = Instagram.client(:access_token => '1313345.3flmg64.r0fjggj4oi02prm3fljg5000')
+```
+
 ## Contributing
 
 1. Fork it
