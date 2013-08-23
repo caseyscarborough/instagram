@@ -29,18 +29,18 @@ All methods in Instagram's API require some kind of authentication. You can retr
 ```ruby
 # Instantiate a new client.
 client = Instagram.client(
-  :client_id => 'asdfljsdfojef2342oejfojfw304',
-  :client_secret => 'afoeu39fu3508520u53j23f9jt4y4y4',
-  :callback_url => 'http://example.com/'
+  :client_id     => '2bfe9d72a4aae8f06a31025b7536be80',
+  :client_secret => '9d667c2b7fae7a329f32b6df17926154',
+  :callback_url  => 'http://example.com/'
 )
 
 # Visit the authorization URL in your browser and login.
 client.authorize_url
-# => "https://api.instagram.com/oauth/authorize/?client_id=asdfljsdfojef2342oejfojfw304&redirect_uri=http://example.com/&response_type=code"
+# => "https://api.instagram.com/oauth/authorize/?client_id=2bfe9d72a4aae8f06a31025b7536be80&redirect_uri=http://example.com/&response_type=code"
 
 # Retrieve the code from the URL parameters and use it to get an access token.
 client.get_access_token('88fb89ab65454da2a06f2c6dacd09436')
-# => '1313345.3flmg64.r0fjggj4oi02prm3fljg5000'
+# => '1313345.3fedf64.a0fcb7f40e02fe3da50500'
 ```
 
 The last method, `get_access_token`, will return your access token as well as set it for your client. You can then access any method in the API using your client.
@@ -48,7 +48,7 @@ The last method, `get_access_token`, will return your access token as well as se
 Alternatively, after you or your user have authenticated, you can reinstantiate your client using the previously returned access token.
 
 ```ruby
-client = Instagram.client(:access_token => '1313345.3flmg64.r0fjggj4oi02prm3fljg5000')
+client = Instagram.client(:access_token => '1313345.3fedf64.a0fcb7f40e02fe3da50500')
 ```
 
 ### Users API Methods
