@@ -24,8 +24,8 @@ module Instagram
       end
 
       def recent(id=nil)
-        url = id ? "/users/#{id}/media/recent" : "/users/self/media/recent"
-        get url, auth_params
+        id = "self" unless id
+        get "/users/#{id}/media/recent", auth_params
       end
 
       def liked
