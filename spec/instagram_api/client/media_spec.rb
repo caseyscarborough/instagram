@@ -10,8 +10,18 @@ describe Instagram::Client::Media do
   end
 
   describe '.media_search', :vcr do
-    it 'returns search results' do
+    it 'returns search results for lat and long' do
       response = test_auth_client.media_search(lat: '48.858844', lng: '2.294351')
+      response.should be_instance_of Hashie::Mash
+    end
+
+    it 'returns search results for distance' do
+      response = test_auth_client.media_search(:distance => 2000)
+      response.should be_instance_of Hashie::Mash
+    end
+
+    it 'returns search results for timestamps' do
+      response = test_auth_client.media_search(:min_timestamp => 1357020000, :max_timestamp => 1375246800)
       response.should be_instance_of Hashie::Mash
     end
   end
