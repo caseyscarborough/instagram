@@ -89,11 +89,18 @@ You can retrieve media information by using the following methods:
 # Get information about a media object by its ID.
 client.media(42020)
 
-# Search for a media item by latitude and longitude,
-# by distance, or by Unix timestamp.
+# Search for a media item by latitude and longitude (required),
+# with distance constraints (default 1000 meters).
 client.media_search(:lat => "48.858844", :lng => "2.294351")
-client.media_search(:distance => 2000)
-client.media_search(:min_timestamp => 1357020000, :max_timestamp => 1375246800)
+client.media_search(:lat => "48.858844", :lng => "2.294351", :distance => 2000)
+
+# Search with Unix timestamp constraints.
+client.media_search(
+  :lat => "48.858844",
+  :lng => "2.294351",
+  :min_timestamp => 1357020000,
+  :max_timestamp => 1375246800
+)
 
 # Get a list of popular media at the moment.
 client.popular_media
