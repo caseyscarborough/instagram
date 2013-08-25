@@ -2,6 +2,10 @@ require 'instagram_api/client/media'
 require 'instagram_api/client/users'
 
 module Instagram
+
+  # Client for the Instagram API.
+  #
+  # @see http://instagram.com/developer/
   class Client
 
     include HTTParty
@@ -22,10 +26,22 @@ module Instagram
       end
     end
 
-    def authorize_url(options={})
+    # Return the authorize URL for a client.
+    #
+    # @return [String] The authorization URL.
+    # @see http://instagram.com/developer/authentication/
+    def authorize_url
       "#{Default::AUTH_URL}?client_id=#{@client_id}&redirect_uri=#{@callback_url}&response_type=code"
     end
 
+    # Get an access token for a user.
+    #
+    # @param code [String] The code retrieved after authorizing a user.
+    # @return [String] The Access Token.
+    # @see http://instagram.com/developer/authentication/
+    # @example
+    #   client.get_access_token('88fb89ab65454da2a06f2c6dacd09436')
+    #   # => '1313345.3fedf64.a0fcb7f40e02fe3da50500'
     def get_access_token(code=nil)
       unless @access_token
         params = { 
@@ -46,12 +62,12 @@ module Instagram
     private
       def get(url, params={})
         response = self.class.get url, query: params
-        response.parsed_response.data rescue response.parsed_response
+        Hashie::Mash.new response.parsed_response
       end
 
       def post(url, params={}, body={}, headers={})
         response = self.class.post url, params: params, body: body
-        response.parsed_response.data rescue response.parsed_response
+        Hashie::Mash.new response.parsed_response
       end
 
       def auth_params

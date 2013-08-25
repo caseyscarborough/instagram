@@ -1,5 +1,6 @@
 require 'json'
 require 'httparty'
+require 'hashie'
 require 'instagram_api/default'
 require 'instagram_api/client'
 require 'instagram_api/version'

@@ -9,7 +9,7 @@ module Instagram
           get "/users/#{user}", auth_params
         when String
           results = search(user)
-          get "/users/#{results[0].id}", auth_params
+          get "/users/#{results.data[0].id}", auth_params
         when nil
           get '/users/self', auth_params
         end
