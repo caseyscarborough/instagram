@@ -20,8 +20,8 @@ module Instagram
       # Search for media in a given area.
       #
       # @param options [Hash] Options.
-      # @option options [String] :lat Latitude of the center search coordinate. If used, lng is required.
-      # @option options [String] :lng Longitude of the center search coordinate. If used, lat is required.
+      # @option options [String] :lat (required) Latitude of the center search coordinate.
+      # @option options [String] :lng (required) Longitude of the center search coordinate.
       # @option options [Integer] :max_timestamp A unix timestamp. All media returned will be taken earlier than this timestamp.
       # @option options [Integer] :min_timestamp A unix timestamp. All media returned will be taken later than this timestamp.
       # @option options [Integer] :distance Default is 1km (distance=1000), max distance is 5km.
