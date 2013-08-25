@@ -2,6 +2,10 @@
 
 This gem is a simple and easy to use wrapper for Instagram's API.
 
+## Documentation
+
+The documentation for this gem can be found at [rdoc.info/gems/instagram_api](http://rdoc.info/gems/instagram_api).
+
 ## Installation
 
 Add this line to your application's Gemfile:
