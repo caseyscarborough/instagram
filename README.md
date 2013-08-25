@@ -53,7 +53,7 @@ client = Instagram.client(:access_token => '1313345.3fedf64.a0fcb7f40e02fe3da505
 
 ### Users API Methods
 
-You can access various information about Instagram users by issuing the following commands:
+You can access various information about Instagram users by using the following methods:
 
 ```ruby
 # Get a user information by id or username.
@@ -80,6 +80,26 @@ client.liked
 ```
 
 See the [Instagram User Endpoints](http://instagram.com/developer/endpoints/users/) for more information.
+
+### Media API Methods
+
+You can retrieve media information by using the following methods:
+
+```ruby
+# Get information about a media object by its ID.
+client.media(42020)
+
+# Search for a media item by latitude and longitude,
+# by distance, or by Unix timestamp.
+client.media_search(:lat => "48.858844", :lng => "2.294351")
+client.media_search(:distance => 2000)
+client.media_search(:min_timestamp => 1357020000, :max_timestamp => 1375246800)
+
+# Get a list of popular media at the moment.
+client.popular_media
+```
+
+See the [Instagram Media Endpoints](http://instagram.com/developer/endpoints/media/) for more information.
 
 ## Contributing
 
