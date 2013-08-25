@@ -28,10 +28,15 @@ module Instagram
       # @see http://instagram.com/developer/endpoints/media/#get_media_search
       # @example Perform a search based on latitude and longitude.
       #   client.media_search(:lat => "48.858844", :lng => "2.294351")
-      # @example Search within 2km.
-      #   client.media_search(:distance => 2000)
-      # @example Search by timestamp.
-      #   client.media_search(:min_timestamp => 1357020000, :max_timestamp => 1375246800)
+      # @example Search within 2km of a location.
+      #   client.media_search(:lat => "48.858844", :lng => "2.294351", :distance => 2000)
+      # @example Constrain results by timestamp.
+      #   client.media_search(
+      #     :lat => "48.858844",
+      #     :lng => "2.294351",
+      #     :min_timestamp => 1357020000,
+      #     :max_timestamp => 1375246800
+      #   )
       def media_search(options={})
         get '/media/search', auth_params.merge(options)
       end
