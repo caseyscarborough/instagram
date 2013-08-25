@@ -28,6 +28,10 @@ $ gem install instagram_api
 
 ## Usage
 
+```ruby
+require 'instagram_api'
+```
+
 All methods in Instagram's API require some kind of authentication. You can retrieve any public data by using just your client ID, but it is recommended to authorize yourself (and your users) using an access_token. You can get your client ID and client secret by visiting [http://instagram.com/developer](http://instagram.com/developer).
 
 ```ruby
