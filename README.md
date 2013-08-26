@@ -1,5 +1,7 @@
 # Instagram API
 
+[![Gem Version](https://badge.fury.io/rb/instagram_api.png)](http://badge.fury.io/rb/instagram_api) [![Code Climate](https://codeclimate.com/github/caseyscarborough/instagram.png)](https://codeclimate.com/github/caseyscarborough/instagram)
+
 This gem is a simple and easy to use wrapper for Instagram's API.
 
 ## Documentation
