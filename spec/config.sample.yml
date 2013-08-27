@@ -1,4 +1,4 @@
-test_client_id: "asdfljsdfojef2342oejfojfw304"
-test_client_secret: "afoeu39fu3508520u53j23f9jt4y4y4"
-test_callback_url: "http://example.com/"
-test_access_token: "1313345.3flmg64.r0fjggj4oi02prm3fljg5000"
+INSTAGRAM_API_TEST_CLIENT_ID: "asdfljsdfojef2342oejfojfw304"
+INSTAGRAM_API_TEST_CLIENT_SECRET: "afoeu39fu3508520u53j23f9jt4y4y4"
+INSTAGRAM_API_TEST_CALLBACK_URL: "http://example.com/"
+INSTAGRAM_API_TEST_ACCESS_TOKEN: "1313345.3flmg64.r0fjggj4oi02prm3fljg5000"
