@@ -6,3 +6,9 @@ branches:
   only:
   - master
 script: bundle exec rspec spec
+env:
+  global:
+  - secure: QffmEVBSdrZIy2t+7REqfJfVAfqLK8PfIaRE1xCrFk+eGMRXQqdDD3HHf2NduesbIaDpFhs/OfBtz078GW3Bk/hCgsq4swjoSMVUujZ3Wl58+cldU3kz+R2Pcof/Fai+Bdi0apWoBN5VUSQUQ/K4VyTHEn7QbPIKj2k1fJ5csmc=
+  - secure: boSn8h6V3btTQtnlNQb1aRLkfU8XbPP5mTjgDgFxJQSOF690aYNVSo3pwKHh+5aV7ipoJ302SbILI4DKHlRR3Frg5Gvc2smV9USV9yhSvmFbUEeQm+onKnUjmtBADv2oLUPm6rjisvJ8kyyP7vet0QSFwWwoAupw/KegnsiIpGo=
+  - secure: lguAfl5tjLhXkeGqgJb3abS2Q8rkQtf4oQiuq0w4Ol4FWEbuDAWTT5qVgpcHGeF2OwSfgaPkn5e4RQiW8sq0864JMQ43NGvxsvshitd/ntXLCwTXSAbSPUnSkeXfqFpdBPPrNivPDzz17JxKQT4cCUGp9Gm5J2xeIs1aeVJMtEQ=
+  - secure: G43GsVksCXCz+TH16lUXKfh5ke6L4slHggZut9bVpsbOgCI0bGaTHON4cwz1++u6SJ+nYQlhHgDALaaPsEecZbEN+TdZJm2aSRKuhWtGmUGMlmM8xtoOyVfmS2qh6rAAZRM070Bpiw4sS4u60EqUwqOd3glfjGLc+v+655ggScc=
