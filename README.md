@@ -184,6 +184,16 @@ Then navigate to [localhost:4567](http://localhost:4567) to see the application 
 
 You can view/download this file [here](https://gist.github.com/caseyscarborough/6331272).
 
+## Supported Ruby Versions
+
+These are the currently supported Ruby versions:
+
+* Ruby 1.8.7
+* Ruby 1.9.2
+* Ruby 1.9.3
+* Ruby 2.0.0
+
+This library may work on other versions of Ruby, but these are the versions that the library is tested against.
 
 ## Contributing
 
