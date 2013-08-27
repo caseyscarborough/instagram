@@ -57,12 +57,12 @@ end
 
 def test_client
   Instagram::Client.new(
-    client_id: test_client_id,
-    client_secret: test_client_secret,
-    callback_url: test_callback_url
+    :client_id => test_client_id,
+    :client_secret => test_client_secret,
+    :callback_url => test_callback_url
   )
 end
 
 def test_auth_client
-  Instagram.client(access_token: test_access_token)
+  Instagram.client(:access_token => test_access_token)
 end

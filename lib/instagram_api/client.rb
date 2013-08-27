@@ -45,11 +45,11 @@ module Instagram
     def get_access_token(code=nil)
       unless @access_token
         params = { 
-          client_id: @client_id,
-          client_secret: @client_secret,
-          grant_type: 'authorization_code',
-          redirect_uri: @callback_url,
-          code: code
+          :client_id => @client_id,
+          :client_secret => @client_secret,
+          :grant_type => 'authorization_code',
+          :redirect_uri => @callback_url,
+          :code => code
         } 
         response = post "https://api.instagram.com/oauth/access_token", {}, params, { 'Content-type' => 'application/x-www-form-urlencoded' }
         @access_token = response['access_token']
@@ -61,17 +61,17 @@ module Instagram
 
     private
       def get(url, params={})
-        response = self.class.get url, query: params
+        response = self.class.get url, :query => params
         Hashie::Mash.new response.parsed_response
       end
 
       def post(url, params={}, body={}, headers={})
-        response = self.class.post url, params: params, body: body
+        response = self.class.post url, :params => params, :body => body
         Hashie::Mash.new response.parsed_response
       end
 
       def auth_params
-        @access_token ? { access_token: @access_token } : { client_id: @client_id }
+        @access_token ? { :access_token => @access_token } : { :client_id => @client_id }
       end
 
   end

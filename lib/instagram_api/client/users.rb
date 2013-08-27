@@ -37,7 +37,7 @@ module Instagram
       # @example Search for a user
       #   client.search('caseyscarborough')
       def search(query=nil)
-        get "/users/search", auth_params.merge(q: query)
+        get "/users/search", auth_params.merge(:q => query)
       end
 
       # Get the authenticated user's feed.
